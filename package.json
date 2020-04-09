@@ -1,0 +1,35 @@
+{
+  "name": "book-library-graphql",
+  "version": "1.0.0",
+  "description": "Library of books",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilnayak0206/book-library-graphql.git"
+  },
+  "author": "Akhil Nayak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhilnayak0206/book-library-graphql/issues"
+  },
+  "homepage": "https://github.com/akhilnayak0206/book-library-graphql#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3"
+  }
+}
