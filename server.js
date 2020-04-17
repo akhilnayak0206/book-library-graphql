@@ -18,7 +18,19 @@ app.use(express.json({ extended: false }));
 
 //Define Routes
 // app.use('/hello', require('./routes/api/hello')); //example
-app.use('/graphql', graphqlHTTP({ schema, graphiql: true }));
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+    customFormatErrorFn: (err) => ({
+      //   console.log(err); // print it out
+      originalError: err.originalError,
+      message: err.message,
+      path: err.path,
+    }),
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 
