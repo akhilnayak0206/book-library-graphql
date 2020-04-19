@@ -1,14 +1,15 @@
 const express = require('express');
-
 const graphqlHTTP = require('express-graphql');
-
-const connectDB = require('./config/db');
-
-const schema = require('./schema/schema');
-
+const cors = require('cors');
 // const path = require('path');
 
+const connectDB = require('./config/db');
+const schema = require('./schema/schema');
+
 const app = express();
+
+// CORS
+app.use(cors());
 
 //Connect Database
 connectDB();
@@ -17,7 +18,6 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 //Define Routes
-// app.use('/hello', require('./routes/api/hello')); //example
 app.use(
   '/graphql',
   graphqlHTTP({
