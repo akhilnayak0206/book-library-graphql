@@ -52,7 +52,7 @@ const AuthorType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    // name: book
+    // @name: book
     // @desc: find book
     // @query: {
     //   book(id: "insert_book_id") {
@@ -81,7 +81,7 @@ const RootQuery = new GraphQLObjectType({
       },
     },
 
-    // name: author
+    // @name: author
     // @desc: find author
     // @query: {
     //   author(id: "insert_author_id") {
@@ -104,8 +104,8 @@ const RootQuery = new GraphQLObjectType({
       },
     },
 
-    // name: books
-    // @desc: find all book
+    // @name: books
+    // @desc: find all books
     // @query: {
     //   books{
     //     name
@@ -125,7 +125,7 @@ const RootQuery = new GraphQLObjectType({
       },
     },
 
-    // name: authors
+    // @name: authors
     // @desc: find all authors
     // @query: {{
     //   authors{
@@ -151,7 +151,7 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    // name: addAuthor
+    // @name: addAuthor
     // @desc: Add author. There is a limit of 50 author.
     //        If database has 50 authors no more can be added.
     //        Duplicate same names are not allowed since it has been set to unique in models/author
@@ -187,7 +187,7 @@ const Mutation = new GraphQLObjectType({
       },
     },
 
-    // name: addBook
+    // @name: addBook
     // @desc: Add Book. There is a limit of 50 books.
     //        If database has 50 books no more can be added.
     //        Duplicate same book names are not allowed since it has been set to unique in models/book
