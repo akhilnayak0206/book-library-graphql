@@ -95,7 +95,22 @@ const Mutation = new GraphQLObjectType({
           name: args.name,
           age: args.age,
         });
-        return author.save();
+        Author.count(function (err, count) {
+          if (err) {
+            const err = new Error();
+            err.status = 500;
+            err.errorMessage = 'Error while counting authors';
+            return err;
+          } else if (count >= 2) {
+            const err = new Error();
+            err.status = 507;
+            err.errorMessage = 'Insufficient storage to add authors';
+            err.errorName = 'Stupify';
+            return err;
+          } else {
+            return author.save();
+          }
+        });
       },
     },
     addBook: {
