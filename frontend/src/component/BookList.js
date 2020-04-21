@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { getBookQuery } from '../queries/queries';
+import { GET_BOOK_QUERY } from '../queries/queries';
 import BookDetails from './BookDetails';
-
+import '../styles/BookList.css';
 function BookList() {
   const [selected, setSelected] = useState(null);
 
-  const { loading, error, data } = useQuery(getBookQuery);
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-  if (error) {
-    return <h1>Oops seems like there is some error while getting data.</h1>;
-  }
-  return (
-    <>
-      <ul className='book-list'>
-        {data.books &&
-          data.books.map((data) => (
+  const { loading, error, data } = useQuery(GET_BOOK_QUERY);
+
+  const displayData = () => {
+    if (loading) {
+      return <h1>Loading...</h1>;
+    } else if (error) {
+      return <h1>Please Refresh the Page.</h1>;
+    } else if (data.books) {
+      return (
+        <ul className='book-list'>
+          {data.books.map((data) => (
             <li key={data.id} onClick={(e) => setSelected(data.id)}>
               {data.name}
             </li>
           ))}
-      </ul>
+        </ul>
+      );
+    }
+  };
+  return (
+    <>
+      {displayData()}
       <BookDetails bookId={selected} />
     </>
   );

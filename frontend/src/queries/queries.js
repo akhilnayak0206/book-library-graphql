@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost';
 
-const getBookQuery = gql`
+const GET_BOOK_QUERY = gql`
   {
     books {
       name
@@ -10,7 +10,7 @@ const getBookQuery = gql`
   }
 `;
 
-const getAuthorQuery = gql`
+const GET_AUTHOR_QUERY = gql`
   {
     authors {
       name
@@ -20,7 +20,7 @@ const getAuthorQuery = gql`
   }
 `;
 
-const addBookMutation = gql`
+const ADD_BOOK_MUTATION = gql`
   mutation($name: String!, $genre: String!, $authorId: ID!) {
     addBook(name: $name, genre: $genre, authorId: $authorId) {
       name
@@ -29,7 +29,7 @@ const addBookMutation = gql`
   }
 `;
 
-const getBookDetailQuery = gql`
+const GET_BOOK_DETAIL_QUERY = gql`
   query($id: ID!) {
     book(id: $id) {
       id
@@ -48,4 +48,9 @@ const getBookDetailQuery = gql`
   }
 `;
 
-export { getBookDetailQuery, getAuthorQuery, getBookQuery, addBookMutation };
+export {
+  GET_BOOK_DETAIL_QUERY,
+  GET_AUTHOR_QUERY,
+  GET_BOOK_QUERY,
+  ADD_BOOK_MUTATION,
+};
