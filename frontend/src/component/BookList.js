@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { GET_BOOK_QUERY } from '../queries/queries';
 import BookDetails from './BookDetails';
 import '../styles/BookList.css';
-function BookList() {
+const BookList = () => {
   const [selected, setSelected] = useState(null);
 
   const { loading, error, data } = useQuery(GET_BOOK_QUERY);
@@ -31,6 +31,6 @@ function BookList() {
       <BookDetails bookId={selected} />
     </>
   );
-}
+};
 
 export default BookList;
