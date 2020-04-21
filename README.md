@@ -32,7 +32,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
     console.log('MongoDB Connected...');
   } catch (err) {
@@ -47,7 +47,6 @@ const connectDB = async () => {
 // mongoose.set('debug', true);
 
 module.exports = connectDB;
-
 ```
 
 ```javascript
@@ -75,6 +74,7 @@ npm run dev
 - mongoose
 - lodash
 - mongoose
+- graphql
 
 **Express** is used with NodeJS to divert users to different parts of the web applications based on the request made.  
 **Mongoose** represents a much cleaner interface for querying MongoDB.  
@@ -82,7 +82,7 @@ npm run dev
 **config** lets you define a set of default parameters, and extend them for different deployment environments.  
 **cors** is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.  
 **lodash** makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.  
-**GraphQL** is a language that enables you to provide a complete and understandable description of the data in your API.  Furthermore it gives clients the power to ask for exactly what they need and nothing more.  
+**GraphQL** is a language that enables you to provide a complete and understandable description of the data in your API. Furthermore it gives clients the power to ask for exactly what they need and nothing more.
 
 **Note:** _I have limited the number of authors and books to **50 counts**, to avoid any malicious activities ._
 
@@ -97,7 +97,7 @@ npm run dev
 **React** is a JavaScript library for building user interfaces.  
 **GraphQL** is a language that enables you to provide a complete and understandable description of the data in your API. Furthermore it gives clients the power to ask for exactly what they need and nothing more.  
 **apollo-boost** is a zero-config way to start using Apollo Client.  
-**@apollo/react-hooks** is used to make calls like useQuery, useMutation, useLazyQuery, etc.  
+**@apollo/react-hooks** is used to make calls like useQuery, useMutation, useLazyQuery, etc.
 
 ## Project Info
 
@@ -111,7 +111,7 @@ npm run dev
 
 ### Special Thanks
 
->Thanks The Net Ninja for helping me with GraphQL.
+> Thanks The Net Ninja for helping me with GraphQL.
 
 #### If you have any suggestion or doubt do let me know
 
