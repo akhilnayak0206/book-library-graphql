@@ -7,7 +7,8 @@ import './App.css';
 
 //apollo setup
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: '/graphql', // use this when deployed
+  // uri: 'http://localhost:5000/graphql', //if you want to run this site locally
 });
 
 const App = () => {
