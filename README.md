@@ -17,7 +17,7 @@ npm install
 ```
 
 ```javascript
-// Make folder config
+// In root make folder config
 // Inside config make db.js
 // Add below code
 const mongoose = require('mongoose');
