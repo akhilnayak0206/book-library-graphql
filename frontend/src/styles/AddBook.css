@@ -46,7 +46,7 @@ form button {
   padding: 0 10px;
   border-radius: 50%;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 10px;
 }
