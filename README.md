@@ -3,7 +3,8 @@
 This is a website to add books in book library and find other books by that author.  
 This is a **MERN** and **GraphQL** project hosted with the help of **heroku**.  
 The Back End is made using **NodeJS & ExpressJS** using **MongoDB** as database and **GraphQL** for querying.  
-The Front End is made using **ReactJS**, **Apollo** and **GraphQL**.
+The Front End is made using **ReactJS**, **Apollo** and **GraphQL**.  
+The **screenshots** of the website in mobile devices and laptop devices are shared in folder `screenshots/`.
 
 ## Quick Start
 
