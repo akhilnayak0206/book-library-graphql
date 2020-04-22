@@ -72,61 +72,61 @@ const AddBook = () => {
 
   return (
     <>
-      <form onSubmit={submitForm} className={showForm ? '' : 'display-none'}>
-        <div className='field'>
-          <label>Book name:</label>
-          <input
-            type='text'
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
-        </div>
-        <div className='field'>
-          <label>Genre:</label>
-          <input
-            type='text'
-            onChange={(e) => setGenre(e.target.value)}
-            value={genre}
-          />
-        </div>
-        <div className='field'>
-          <label>Author:</label>
-          <select
-            onChange={(e) => setAuthorId(e.target.value)}
-            value={authorId}
-          >
-            <option value={'select'}>Select author</option>
-            {displayAuthors()}
-          </select>
-        </div>
-        {displayMutationError()}
-        <div className='form-buttons'>
-          <button
-            type='button'
-            onClick={(e) => {
-              // e.stopPropagation();
-              // e.preventDefault();
-              setShowForm(false);
-            }}
-          >
-            {' '}
-            Cancel
-          </button>
-          <button
-            type='submit'
-            // onClick={() => submitForm()}
-          >
-            {' '}
-            Add Book
-          </button>
-        </div>
-      </form>
-      <button
-        className={showForm ? 'display-none' : 'button-show'}
-        onClick={() => setShowForm(true)}
-      >
-        +
-      </button>
+      {showForm ? (
+        <form onSubmit={submitForm}>
+          <div className='field'>
+            <label>Book name:</label>
+            <input
+              type='text'
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+          </div>
+          <div className='field'>
+            <label>Genre:</label>
+            <input
+              type='text'
+              onChange={(e) => setGenre(e.target.value)}
+              value={genre}
+            />
+          </div>
+          <div className='field'>
+            <label>Author:</label>
+            <select
+              onChange={(e) => setAuthorId(e.target.value)}
+              value={authorId}
+            >
+              <option value={'select'}>Select author</option>
+              {displayAuthors()}
+            </select>
+          </div>
+          {displayMutationError()}
+          <div className='form-buttons'>
+            <button
+              type='button'
+              onClick={(e) => {
+                // e.stopPropagation();
+                // e.preventDefault();
+                setShowForm(false);
+              }}
+            >
+              {' '}
+              Cancel
+            </button>
+            <button
+              type='submit'
+              // onClick={() => submitForm()}
+            >
+              {' '}
+              Add Book
+            </button>
+          </div>
+        </form>
+      ) : (
+        <button className='button-show' onClick={() => setShowForm(true)}>
+          +
+        </button>
+      )}
     </>
   );
 };
